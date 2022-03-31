@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style2.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="nav">
+        <figure class="nav-header">
+          <img src="../assets/Spotify_icon-icons.com_66783.svg" alt="" />
+        </figure>
+        <div class="container-select">
+          <label for="cars">Che genere ascolti:</label>
+          <select
+            v-model="SelezioneGenere"
+            @change="$emit('changeGenere', SelezioneGenere)"
+            name="cars"
+            id="cars"
+          >
+            <option value="all">All</option>
+            <option value="metal">Metal</option>
+            <option value="jazz">Jazz</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+          </select>
+        </div>
+      </header>
+
+      <!-- card -->
+      <main class="container-Music">
+        <ul class="container">
+          <li v-for="(el, i) in card" class="characters">
+            <figure class="img-container">
+              <img :src="el.poster" alt="" />
+            </figure>
+            <h5 class="titolo">{{ el.title }}</h5>
+            <p class="autore">{{ el.author }}</p>
+            <span class="anno">{{ el.year }}</span>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

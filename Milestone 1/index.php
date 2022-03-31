@@ -1,5 +1,5 @@
 <?php
-  include 'lista.php'
+  include 'lista.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,8 +52,6 @@
       </ul>
     </main>
   </div>
-
-  <script src="script.js"></script>
 </body>
 
 </html>
